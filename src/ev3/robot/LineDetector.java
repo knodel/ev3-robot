@@ -1,5 +1,6 @@
 package ev3.robot;
 
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -20,7 +21,7 @@ import lejos.robotics.navigation.DifferentialPilot;
 public class LineDetector {
 	
     //private LightSensor light = new LightSensor(SensorPort.S3);
-    private EV3ColorSensor light = new EV3ColorSensor(SensorPort.S3);
+    private EV3ColorSensor light = new EV3ColorSensor(SensorPort.S1);
 	
 	private float high = 0.0f;
 	private float low  = 2.0f;
@@ -97,7 +98,7 @@ public class LineDetector {
 		low  = 2.0f;
 		diff = 0;
 		threshold = 0.3f;
-		pilot.setRotateSpeed(16);//12
+		//pilot.setRotateSpeed(16);//12
 	    pilot.rotate(360, true);
 		while (pilot.isMoving()) {
 			lightList.add(getRedSensorValue());

@@ -1,15 +1,17 @@
 package ev3.robot;
 
+
 import lejos.hardware.Button;
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.port.SensorPort;
-import lejos.hardware.sensor.EV3IRSensor;
+//import lejos.hardware.sensor.EV3IRSensor;
+import lejos.hardware.sensor.EV3UltrasonicSensor;
 import lejos.robotics.SampleProvider;
 import lejos.hardware.motor.Motor;
 
 public class BarrierDetector extends Thread {
 	
-	EV3IRSensor ir = new EV3IRSensor(SensorPort.S4);
+	EV3UltrasonicSensor ir = new EV3UltrasonicSensor(SensorPort.S4);
 	SampleProvider distance = ir.getDistanceMode();
 	
 	boolean stop = false;
